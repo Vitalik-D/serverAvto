@@ -1,24 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 require('./database');
-const passport = require('./passport');
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 // Route requires
-const user = require('./routes/user');
 const product = require('./routes/product');
-
-
-
-
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cors = require('cors');
-var api = require('./routes/api');
-
-
+const api = require('./routes/api');
 
 app.use((req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");
@@ -33,16 +21,13 @@ app.use((req, res, next) => {
 	next();
 });
 // MIDDLEWARE
-app.use(morgan('dev'));
 
+app.use(bodyParser.json());
 app.use(
 	bodyParser.urlencoded({
-		extended: false
+		extended: true
 	})
 );
-app.use(bodyParser.json());
-
-
 
 // Routes
 app.use('/api', api);
