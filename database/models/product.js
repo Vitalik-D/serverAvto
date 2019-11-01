@@ -3,16 +3,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ProductScheme = new Schema(
-    {
-        title: String,
-        description: String,
-        category: String,
-        subCategory: String,
-        img: Array,
-    },
-    {
-        timestamps: true
-    }
+  {
+    title: String,
+    description: String,
+    category: String,
+    subCategory: String,
+    img: Array
+  },
+  {
+    timestamps: true
+  }
 );
 
 const Product = mongoose.model("Product", ProductScheme);
