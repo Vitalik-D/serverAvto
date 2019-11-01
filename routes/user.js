@@ -35,7 +35,7 @@ router.post(
     console.log(req.body);
     next();
   },
-  passport.authenticate("local"),
+  passport.authenticate("avto-135.herokuapp"),
   (req, res) => {
     console.log("logged in", req.user);
     var userInfo = {

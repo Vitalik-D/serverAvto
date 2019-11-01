@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.4.0",
+    "passport-jwt": "^4.0.0",
+    "serve-favicon": "^2.5.0",
     "axios": "^0.17.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
@@ -15,7 +23,8 @@
     "passport-local": "^1.0.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",

@@ -9,6 +9,17 @@ const PORT = process.env.PORT || 8080;
 const user = require('./routes/user');
 const product = require('./routes/product');
 
+
+
+
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cors = require('cors');
+var api = require('./routes/api');
+
+
+
 app.use((req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header(
@@ -31,12 +42,10 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// Passport
-app.use(passport.initialize());
-app.use(passport.session());// calls the deserializeUser
+
 
 // Routes
-app.use('/user', user);
+app.use('/api', api);
 app.use('/posts', product);
 
 // Starting Server
