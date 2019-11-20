@@ -6,13 +6,13 @@ class Product {
       if (err) {
         res.send(err);
       }
-      console.log(posts);
+
       res.json(posts);
     });
   }
 
   create(req, res) {
-    console.log(req);
+
     const post = new ProductModel({
       img: req.body.img,
       title: req.body.title,

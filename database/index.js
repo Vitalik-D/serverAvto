@@ -1,9 +1,6 @@
 //Connect to Mongo database
 const mongoose = require("mongoose");
 
-//your local database url
-//27017 is the default mongoDB port
-
 const connectionString =
   "mongodb+srv://test:1111@avto-ss36s.gcp.mongodb.net/test?retryWrites=true&w=majority";
 

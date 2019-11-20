@@ -6,6 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 // Route requires
 const product = require('./routes/product');
+const phone = require('./routes/phone');
+const buy = require('./routes/buy');
 const api = require('./routes/api');
 
 app.use((req, res, next) => {
@@ -32,6 +34,8 @@ app.use(
 // Routes
 app.use('/api', api);
 app.use('/posts', product);
+app.use('/phone', phone);
+app.use('/buy', buy);
 
 // Starting Server
 app.listen(PORT, () => {
