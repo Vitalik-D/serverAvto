@@ -6,5 +6,6 @@ const Phone = new phoneContoller();
 router.get("/", Phone.index);
 router.delete("/:id", Phone.delete);
 router.post("/", Phone.create);
+router.put("/:id", Phone.update);
 
 module.exports = router;

@@ -10,7 +10,15 @@ class Phone {
             res.json(posts);
         });
     }
+    update(req, res) {
+        PhoneModel.findByIdAndUpdate(req.params.id, { $set: req.body }, err => {
+            if (err) {
+                res.send(err);
+            }
 
+            res.json({ status: "update" });
+        });
+    }
     create(req, res) {
         const post = new PhoneModel({
             phone: req.body.phone,
