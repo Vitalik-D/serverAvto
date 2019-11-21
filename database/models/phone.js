@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const PhoneScheme = new Schema(
     {
-        phone: String
+        phone: String,
+        info: String
     },
     {
         timestamps: true
