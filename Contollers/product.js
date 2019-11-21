@@ -18,7 +18,8 @@ class Product {
       title: req.body.title,
       description: req.body.description,
       category: req.body.category,
-      subCategory: req.body.subCategory
+      subCategory: req.body.subCategory,
+      cost: req.body.cost
     });
     post.save().then(() => {
       res.json({ status: "ok" });
