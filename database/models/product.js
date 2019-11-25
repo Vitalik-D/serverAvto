@@ -9,7 +9,8 @@ const ProductScheme = new Schema(
     category: String,
     subCategory: Array,
     img: Array,
-    cost: String
+    cost: String,
+    visible: Boolean
   },
   {
     timestamps: true

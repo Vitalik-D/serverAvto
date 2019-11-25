@@ -12,14 +12,14 @@ class Product {
   }
 
   create(req, res) {
-
     const post = new ProductModel({
       img: req.body.img,
       title: req.body.title,
       description: req.body.description,
       category: req.body.category,
       subCategory: req.body.subCategory,
-      cost: req.body.cost
+      cost: req.body.cost,
+      visible: req.body.visible,
     });
     post.save().then(() => {
       res.json({ status: "ok" });
@@ -27,7 +27,10 @@ class Product {
   }
 
   read(req, res) {
-    ProductModel.findOne({ _id: req.params, id }).then(post => {
+    ProductModel.findOne(
+        { _id: req.params, id }
+
+  ).then(post => {
       if (!post) {
         res.send({ error: "not found" });
       } else {
