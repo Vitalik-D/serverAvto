@@ -31,7 +31,6 @@ router.post("/", (req, res) => {
 router.post(
   "/login",
   function(req, res, next) {
-
     next();
   },
   passport.authenticate("avto-135.herokuapp"),

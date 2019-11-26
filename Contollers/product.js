@@ -19,7 +19,7 @@ class Product {
       category: req.body.category,
       subCategory: req.body.subCategory,
       cost: req.body.cost,
-      visible: req.body.visible,
+      visible: req.body.visible
     });
     post.save().then(() => {
       res.json({ status: "ok" });
@@ -27,7 +27,7 @@ class Product {
   }
 
   read(req, res) {
-    console.log(req.params)
+    console.log(req.params);
     ProductModel.findOne({
       _id: req.params.id
     }).then(post => {
