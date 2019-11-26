@@ -27,10 +27,10 @@ class Product {
   }
 
   read(req, res) {
-    ProductModel.findOne(
-        { _id: req.params, id }
-
-  ).then(post => {
+    console.log(req.params)
+    ProductModel.findOne({
+      _id: req.params.id
+    }).then(post => {
       if (!post) {
         res.send({ error: "not found" });
       } else {
